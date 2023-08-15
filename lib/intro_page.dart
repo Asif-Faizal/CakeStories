@@ -53,7 +53,7 @@ class IntroPage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
-                    height: 1.7,
+                    height: 2,
                     color: Colors.white,
                   )),
             ),
@@ -62,6 +62,7 @@ class IntroPage extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: Button(
                 text: 'Dive In',
+                fontSize: 20,
                 onTap: () {
                   Navigator.pushNamed(context, '/menupage');
                 },
