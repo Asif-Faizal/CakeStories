@@ -1,7 +1,9 @@
 import 'package:cakestories/button.dart';
 import 'package:cakestories/food_const.dart';
+import 'package:cakestories/shop.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class FoodDetailsPage extends StatefulWidget {
   final Food food;
@@ -28,17 +30,63 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
     });
   }
 
-  void addToCart() {}
+  void addToCart() {
+    if (quantityCount > 0) {
+      final shop = context.read<Shop>();
+      shop.addToCart(widget.food, quantityCount);
+      showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+                backgroundColor: Colors.red[900],
+                content: Text(
+                  "Succesfully Added to the Cart",
+                  style: GoogleFonts.dmSerifDisplay(
+                      color: Colors.white, fontSize: 25),
+                  textAlign: TextAlign.center,
+                ),
+                actions: [
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                        Navigator.pop(context);
+                      },
+                      child: Button(
+                        text: "Goto HomePage",
+                        fontSize: 20,
+                        bgcolor: Colors.red[700],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/cartpage');
+                      },
+                      child: Button(
+                          text: "Goto Your Cart",
+                          fontSize: 20,
+                          bgcolor: Colors.red[700]),
+                    ),
+                  ),
+                ],
+              ));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red[100],
+      backgroundColor: Colors.red[200],
       appBar: AppBar(
-        leading: const Icon(
-          Icons.menu,
-          color: Colors.black,
-        ),
+        foregroundColor: Colors.black,
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Center(
@@ -50,7 +98,9 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
         ),
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/cartpage');
+              },
               icon: Icon(
                 Icons.shopping_basket,
                 color: Colors.black,
@@ -163,10 +213,10 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                   height: 20,
                 ),
                 Button(
-                  text: 'Add to Cart',
-                  fontSize: 20,
-                  onTap: addToCart,
-                )
+                    text: 'Add to Cart',
+                    fontSize: 20,
+                    onTap: addToCart,
+                    bgcolor: Colors.red[700])
               ],
             ),
           )

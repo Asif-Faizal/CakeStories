@@ -12,6 +12,7 @@ class IntroPage extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.all(20),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             const SizedBox(
               height: 20,
@@ -66,6 +67,7 @@ class IntroPage extends StatelessWidget {
                 onTap: () {
                   Navigator.pushNamed(context, '/menupage');
                 },
+                bgcolor: Colors.red[700],
               ),
             )
           ],

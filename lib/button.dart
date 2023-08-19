@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -7,8 +5,13 @@ class Button extends StatelessWidget {
   final void Function()? onTap;
   final String text;
   final double fontSize;
+  final dynamic bgcolor;
   const Button(
-      {super.key, required this.text, this.onTap, required this.fontSize});
+      {super.key,
+      required this.text,
+      this.onTap,
+      required this.fontSize,
+      required this.bgcolor});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +19,7 @@ class Button extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-            color: Colors.red.shade700, borderRadius: BorderRadius.circular(5)),
+            color: bgcolor, borderRadius: BorderRadius.circular(5)),
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Padding(
