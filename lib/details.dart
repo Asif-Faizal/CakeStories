@@ -83,6 +83,9 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
+    var r = widget.food.price;
+    int rate = int.parse(r);
+    int foodPrice = (rate * quantityCount);
     return Scaffold(
       backgroundColor: Colors.red[200],
       appBar: AppBar(
@@ -166,7 +169,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                   //price
                   children: [
                     Text(
-                      '\u{20B9}${widget.food.price}',
+                      '\u{20B9}${foodPrice}',
                       style: GoogleFonts.dmSerifDisplay(
                           color: Colors.black, fontSize: 30),
                     ),
@@ -190,7 +193,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                           width: 40,
                           child: Center(
                             child: Text(
-                              quantityCount.toString(),
+                              '${quantityCount}',
                               style: GoogleFonts.dmSerifDisplay(
                                   color: Colors.black, fontSize: 20),
                             ),

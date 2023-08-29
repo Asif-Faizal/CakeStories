@@ -1,6 +1,8 @@
+import 'package:cakestories/address.dart';
 import 'package:cakestories/cart_page.dart';
 import 'package:cakestories/intro_page.dart';
 import 'package:cakestories/menu_page.dart';
+import 'package:cakestories/payments.dart';
 import 'package:cakestories/shop.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -24,7 +26,9 @@ class MyApp extends StatelessWidget {
       routes: {
         '/intropage': (context) => const IntroPage(),
         '/menupage': (context) => const MenuPage(),
-        '/cartpage': (context) => const CartPage()
+        '/cartpage': (context) => const CartPage(),
+        '/payments': (context) => const PaymentScreen(),
+        '/address': (context) => const AdressScreen()
       },
     );
   }

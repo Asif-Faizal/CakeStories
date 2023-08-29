@@ -119,9 +119,11 @@ class CartPage extends StatelessWidget {
                     height: 20,
                   ),
                   Button(
-                      text: 'Pay Now!',
+                      text: 'Checkout!',
                       fontSize: 25,
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(context, '/address');
+                      },
                       bgcolor: Colors.red[900])
                 ],
               ),
