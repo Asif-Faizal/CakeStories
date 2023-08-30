@@ -31,18 +31,55 @@ class PaymentScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Padding(
-        padding:
-            const EdgeInsets.only(right: 30, left: 30, top: 30, bottom: 20),
-        child: GridView.count(
-          crossAxisCount: 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          children: List.generate(choices.length, (index) {
-            return Center(
-              child: SelectCard(choice: choices[index]),
-            );
-          }),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(
+                  right: 30, left: 30, top: 30, bottom: 20),
+              child: GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                children: List.generate(choices.length, (index) {
+                  return Center(
+                    child: SelectCard(choice: choices[index]),
+                  );
+                }),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Colors.red.shade700),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                child: Row(
+                  children: [
+                    Checkbox(value: false, onChanged: (bool? value) {}),
+                    Text(
+                      'Cash on Delivery',
+                      style: GoogleFonts.dmSerifDisplay(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              'Deliver To\naddress',
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ),
     );
@@ -69,7 +106,7 @@ class SelectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.red.shade200,
+      color: Colors.red.shade700,
       child: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

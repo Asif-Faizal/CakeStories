@@ -39,17 +39,17 @@ class AdressScreen extends StatelessWidget {
                 children: [
                   Padding(
                       padding: const EdgeInsets.only(
-                          right: 25, left: 25, bottom: 20, top: 35),
+                          right: 25, left: 25, bottom: 15, top: 35),
                       child: TextField(
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
                             filled: true,
-                            labelStyle:
-                                GoogleFonts.dmSerifDisplay(color: Colors.white),
+                            labelStyle: GoogleFonts.dmSerifDisplay(
+                                color: Colors.white, fontSize: 13),
                             labelText: "  Name",
-                            fillColor: Colors.red.shade300,
+                            fillColor: Colors.red.shade400,
                             focusedBorder: const OutlineInputBorder(
                                 borderSide:
                                     BorderSide(color: Colors.red, width: 2)),
@@ -58,17 +58,17 @@ class AdressScreen extends StatelessWidget {
                       )),
                   Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 25, vertical: 20),
+                          horizontal: 25, vertical: 15),
                       child: TextField(
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
                             filled: true,
-                            labelStyle:
-                                GoogleFonts.dmSerifDisplay(color: Colors.white),
+                            labelStyle: GoogleFonts.dmSerifDisplay(
+                                color: Colors.white, fontSize: 12),
                             labelText: "  Phone Number",
-                            fillColor: Colors.red.shade300,
+                            fillColor: Colors.red.shade400,
                             focusedBorder: const OutlineInputBorder(
                                 borderSide:
                                     BorderSide(color: Colors.red, width: 2)),
@@ -77,17 +77,17 @@ class AdressScreen extends StatelessWidget {
                       )),
                   Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 25, vertical: 20),
+                          horizontal: 25, vertical: 15),
                       child: TextField(
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
                             filled: true,
-                            labelStyle:
-                                GoogleFonts.dmSerifDisplay(color: Colors.white),
+                            labelStyle: GoogleFonts.dmSerifDisplay(
+                                color: Colors.white, fontSize: 12),
                             labelText: "  Address Line 1",
-                            fillColor: Colors.red.shade300,
+                            fillColor: Colors.red.shade400,
                             focusedBorder: const OutlineInputBorder(
                                 borderSide:
                                     BorderSide(color: Colors.red, width: 2)),
@@ -96,17 +96,17 @@ class AdressScreen extends StatelessWidget {
                       )),
                   Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 25, vertical: 20),
+                          horizontal: 25, vertical: 15),
                       child: TextField(
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
                             filled: true,
-                            labelStyle:
-                                GoogleFonts.dmSerifDisplay(color: Colors.white),
+                            labelStyle: GoogleFonts.dmSerifDisplay(
+                                color: Colors.white, fontSize: 12),
                             labelText: "  Address Line 2",
-                            fillColor: Colors.red.shade300,
+                            fillColor: Colors.red.shade400,
                             focusedBorder: const OutlineInputBorder(
                                 borderSide:
                                     BorderSide(color: Colors.red, width: 2)),
@@ -115,17 +115,17 @@ class AdressScreen extends StatelessWidget {
                       )),
                   Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 25, vertical: 20),
+                          horizontal: 25, vertical: 15),
                       child: TextField(
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
                             filled: true,
-                            labelStyle:
-                                GoogleFonts.dmSerifDisplay(color: Colors.white),
+                            labelStyle: GoogleFonts.dmSerifDisplay(
+                                color: Colors.white, fontSize: 12),
                             labelText: "  LandMark",
-                            fillColor: Colors.red.shade300,
+                            fillColor: Colors.red.shade400,
                             focusedBorder: const OutlineInputBorder(
                                 borderSide:
                                     BorderSide(color: Colors.red, width: 2)),
@@ -134,17 +134,17 @@ class AdressScreen extends StatelessWidget {
                       )),
                   Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 25, vertical: 20),
+                          horizontal: 25, vertical: 15),
                       child: TextField(
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
                             filled: true,
-                            labelStyle:
-                                GoogleFonts.dmSerifDisplay(color: Colors.white),
+                            labelStyle: GoogleFonts.dmSerifDisplay(
+                                color: Colors.white, fontSize: 12),
                             labelText: "  PinCode",
-                            fillColor: Colors.red.shade300,
+                            fillColor: Colors.red.shade400,
                             focusedBorder: const OutlineInputBorder(
                                 borderSide:
                                     BorderSide(color: Colors.red, width: 2)),
@@ -172,7 +172,7 @@ class AdressScreen extends StatelessWidget {
                         bgcolor: Colors.red[900]))
               ],
             ),
-          )
+          ),
         ],
       ),
     );

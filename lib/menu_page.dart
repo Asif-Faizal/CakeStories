@@ -37,7 +37,7 @@ class _MenuPageState extends State<MenuPage> {
     return Scaffold(
       backgroundColor: Colors.red[200],
       appBar: AppBar(
-        leading: Icon(
+        leading: const Icon(
           Icons.menu,
           color: Colors.black,
         ),
@@ -55,7 +55,7 @@ class _MenuPageState extends State<MenuPage> {
               onPressed: () {
                 Navigator.pushNamed(context, '/cartpage');
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.shopping_basket,
                 color: Colors.black,
               ))

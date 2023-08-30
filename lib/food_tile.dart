@@ -33,7 +33,7 @@ class FoodTile extends StatelessWidget {
               //text
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: Text(
                   food.name,
                   style: GoogleFonts.dmSerifDisplay(
@@ -52,7 +52,7 @@ class FoodTile extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 30, vertical: 5),
+                            horizontal: 20, vertical: 5),
                         child: Text(
                           '\u{20B9}${food.price}',
                           style: GoogleFonts.dmSerifDisplay(
@@ -70,6 +70,9 @@ class FoodTile extends StatelessWidget {
                         style: TextStyle(
                             color: Colors.grey.shade300, fontSize: 12),
                       ),
+                      SizedBox(
+                        width: 20,
+                      )
                     ],
                   ),
                 ),
