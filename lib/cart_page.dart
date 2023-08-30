@@ -15,8 +15,15 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<Shop>(
-      builder: (context, value, child) => Scaffold(
+    return Consumer<Shop>(builder: (context, value, child) {
+      final List<Food> cartItems = value.cart;
+      double totalAmount = 0;
+
+      for (Food food in cartItems) {
+        double price = double.tryParse(food.price) ?? 0;
+        totalAmount += price;
+      }
+      return Scaffold(
         backgroundColor: Colors.red[900],
         appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -79,7 +86,7 @@ class CartPage extends StatelessWidget {
                           ),
                         ),
                         trailing: IconButton(
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.delete,
                             color: Colors.white,
                           ),
@@ -91,7 +98,7 @@ class CartPage extends StatelessWidget {
             ),
             //payment button
             Container(
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
               color: Colors.red.shade700,
               child: Column(
                 children: [
@@ -108,7 +115,7 @@ class CartPage extends StatelessWidget {
                               color: Colors.white, fontSize: 20),
                         ),
                         Text(
-                          '\u{20B9}${1200}',
+                          '\u{20B9}$totalAmount',
                           style: GoogleFonts.dmSerifDisplay(
                               color: Colors.white, fontSize: 20),
                         ),
@@ -130,7 +137,7 @@ class CartPage extends StatelessWidget {
             )
           ],
         ),
-      ),
-    );
+      );
+    });
   }
 }
